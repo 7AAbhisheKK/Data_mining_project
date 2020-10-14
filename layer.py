@@ -1,8 +1,5 @@
 from util import *
 import numpy as np
-
-
-
 def initialize_layer(dims): ###initialize the weight and bias matrix of every layer 
     np.random.seed(3)
     parameters={}
