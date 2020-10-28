@@ -39,7 +39,6 @@ def L_layer_forward_pass(X,parameters):
     AL,cache=linear_forward_pass(A,parameters['W'+str(L)],parameters['b'+str(L)],"Relu")
     # print("caches for ",L,"layers ",cache)
     caches.append(cache)
-
     return AL,caches
 def linear_backward(dZ,cache):
     A_prev, W, b = cache
