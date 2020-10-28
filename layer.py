@@ -5,7 +5,7 @@ def initialize_layer(dims): ###initialize the weight and bias matrix of every la
     parameters={}
     L=len(dims)
     for i in range(1,L):
-        parameters['W'+str(i)]=np.random.rand(dims[i],dims[i-1])*0.01
+        parameters['W'+str(i)]=np.random.randn(dims[i],dims[i-1])*np.sqrt(2/dims[i-1])
         # print("--", parameters['W'+str(i)].shape)
         parameters['b'+str(i)]=np.zeros((dims[i],1))
     return parameters
@@ -46,7 +46,7 @@ def linear_backward(dZ,cache):
     # print(A_prev.shape,dZ.shape)
     m = A_prev.shape[1]
     dW = (1/m)*np.dot(dZ,A_prev.T)
-    db = 1/m*(np.sum(dZ,axis=1,keepdims=True))
+    db = (1/m)*(np.sum(dZ,axis=1,keepdims=True))
     dA_prev = np.dot(W.T,dZ)
 
     assert (dA_prev.shape == A_prev.shape)

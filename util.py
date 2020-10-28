@@ -24,18 +24,9 @@ def softmax_grad(X,Y):
     correct=np.zeros_like(X)
     m=Y.shape[1]
     correct[Y,np.arange(m)]=1
-    return (-correct+softmax(X))    
+    x=(-correct+softmax(X))
+    return x    
 def relu_backward(dA, cache):
-    """
-    Implement the backward propagation for a single RELU unit.
-
-    Arguments:
-    dA -- post-activation gradient, of any shape
-    cache -- 'Z' where we store for computing backward propagation efficiently
-
-    Returns:
-    dZ -- Gradient of the cost with respect to Z
-    """
     
     Z = cache
     dZ = np.array(dA, copy=True) # just converting dz to a correct object.
@@ -48,16 +39,7 @@ def relu_backward(dA, cache):
     return dZ
 
 def sigmoid_backward(dA, cache):
-    """
-    Implement the backward propagation for a single SIGMOID unit.
 
-    Arguments:
-    dA -- post-activation gradient, of any shape
-    cache -- 'Z' where we store for computing backward propagation efficiently
-
-    Returns:
-    dZ -- Gradient of the cost with respect to Z
-    """
     
     Z = cache
     

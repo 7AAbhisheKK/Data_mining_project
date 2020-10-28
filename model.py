@@ -13,11 +13,11 @@ dims.append(10)
 parameters=initialize_layer(dims)
 AL,caches=L_layer_forward_pass(X_train,parameters)
 c=softmax_grad(AL,Y_train)
-for i in tqdm.tqdm(range(600)):
-    AL,caches=L_layer_forward_pass(X_train,parameters)
-    loss=softmax_loss(AL,Y_train)
-    if i%50==0:
-        print(loss.mean())
-    grads=L_model_backward(AL, Y_train, caches)
-    parameters=update_parameters(parameters, grads, 0.01)
-predict(X_test,Y_test,parameters)
+# for i in tqdm.tqdm(range(600)):
+#     AL,caches=L_layer_forward_pass(X_train,parameters)
+#     loss=softmax_loss(AL,Y_train)
+#     if i%50==0:
+#         print(loss.mean())
+#     grads=L_model_backward(AL, Y_train, caches)
+#     parameters=update_parameters(parameters, grads, 0.01)
+# predict(X_test,Y_test,parameters)

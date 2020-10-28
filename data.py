@@ -6,8 +6,8 @@ def load_dataset_from_file(flatten=False):
     X_test = X_test.astype(float) / 255.
 
     # we reserve the last 10000 training examples for validation
-    X_train, X_val = X_train[0:5000], X_train[-10000:]
-    y_train, y_val = y_train[0:5000], y_train[-10000:]
+    X_train, X_val = X_train[0:-10000], X_train[-10000:]
+    y_train, y_val = y_train[0:-10000], y_train[-10000:]
 
     if flatten:
         X_train = X_train.reshape([X_train.shape[0], -1])
