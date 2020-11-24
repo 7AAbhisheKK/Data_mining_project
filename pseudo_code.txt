@@ -1,0 +1,31 @@
+
+X_train,Y_train,X_test,Y_test=load_data()
+A //List where size is number of layer and A[i] is number of nuerons
+
+def initialize_parameter(A):
+    for i in len(A):
+        initialize W,b for every layer
+    return initialized_values
+def L_layer_forward_pass(X_train,initialized_values)://to do forward pass in every layer
+    for i in range(len(initialized_values//2)):
+        do forward pass for every layer and apply activation function and store the values in a list
+
+    return (list of W,b for every layer after forward pass and output of last layer)
+def L_layer_backward_pass(output)of_last_layer,Y_train,list_of_W_and_b):
+    calculate grands for each layers and store it in a list(grads)
+
+    return grads
+def update_parameter(initialized_values,grads,learning_rate):
+    for i in range of(len(initialized_values)):
+        update values of W,b that is w=w-learning_rate*dW
+    return updated initialized_values
+
+
+parameter=initialize_parameter(A)
+for i number of epoch:
+    for batch of 32 of x_train:
+        cache,AL=L_layer_forward_pass
+        grads=L_layer_backward_pass(AL,Y_train,parameter)
+        parameter=update_parameter(parameter,grads,learning_rate))
+        calculate_loss(,X_testcache,Y_test) //afteri epoch 
+
